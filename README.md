@@ -31,7 +31,7 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/finally-no-flexbox-no-css-grid-and-compatible-with-ie10-and-ie11-ga6nFmSJW)
 - [Live Site URL](https://farispalayi.github.io/Profile-card-component/)
 
 ## My process
