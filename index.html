@@ -6,8 +6,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="./images/image-victor.jpg">
   <link rel="preload" href="./style.css">
+  <link rel="preload" href="./images/bg-pattern-top.svg">
+  <link rel="preload" href="./images/bg-pattern-bottom.svg">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Profile card component</title>
 </head>
@@ -15,14 +16,14 @@
 
   <article class="card">
     <div class="details-container">
-      <div class="avatar-container"><img class="avatar" src="./images/image-victor.jpg" alt="victor's avatar"></div>
-      <div class="details"><h1 class="name" title="About Victor Crest">Victor Crest</h1><!--26--><p class="place">London</p></div>
+      <div class="avatar-container" tabindex="1"><img class="avatar" src="./images/image-victor.jpg" alt="victor's avatar"></div>
+      <div class="details"><h1 class="name" title="About Victor Crest" tabindex="2">Victor Crest</h1><p class="place">London</p></div>
     </div>
     <div class="stats-container">
       <ul>
-        <li><h3 class="stat-number">80K</h3><p class="stat-name">Followers</p></li>
-        <li><h3 class="stat-number">803K</h3><p class="stat-name">Likes</p></li>
-        <li><h3 class="stat-number">1.4K</h3><p class="stat-name">Photos</p></li>
+        <li tabindex="3"><h3 class="stat-number">80K</h3><p class="stat-name">Followers</p></li>
+        <li tabindex="4"><h3 class="stat-number">803K</h3><p class="stat-name">Likes</p></li>
+        <li tabindex="5"><h3 class="stat-number">1.4K</h3><p class="stat-name">Photos</p></li>
       </ul>
     </div>
   </article>
