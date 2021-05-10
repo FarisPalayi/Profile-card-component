@@ -68,16 +68,16 @@ body::after{
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.06),
               0 50px 60px rgba(0, 0, 0, 0.15);
   opacity: 0;
-  animation: card 500ms ease-in forwards;
+  animation: card 500ms ease-in-out 200ms forwards;
 }
 @keyframes card{
   0%{
     opacity: 0;
-    transform: scale(0) rotate(0deg);
+    transform: scale(0) skew(300deg);
   }
   100%{
     opacity: 1;
-    transform: scale(1) rotate(360deg);
+    transform: scale(1) skew(360deg);
   }
 }
 
