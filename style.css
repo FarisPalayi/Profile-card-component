@@ -185,7 +185,7 @@ main:after {
   height: 100%;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(0.91);
+  transform: translate(-50%, -50%) scale(0.9);
   border-radius: 50%;
   background-image: linear-gradient(90deg, rgb(0, 139, 139), rgb(27, 183, 197));
   z-index: -1;
