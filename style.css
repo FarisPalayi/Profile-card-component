@@ -12,16 +12,9 @@
 }
 
 body {
-  display: -ms-flexbox; /* IE10 */
-  -ms-flex-pack: center;
-  -ms-flex-align: center;
-
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-
   margin: 0;
 
+  width: 100%;
   height: 100vh;
   min-height: fit-content;
 
@@ -84,6 +77,9 @@ body::after {
 }
 
 .card {
+  margin:0 auto;
+  top: 50%;
+
   width: 310px;
   height: 332px;
   background-color: rgb(255, 255, 255);
@@ -93,18 +89,18 @@ body::after {
 
   opacity: 0;
   transition: all 0.3s;
-  transform: scale(0) skew(300deg);
+  transform: scale(0) skew(300deg) translateY(50%);
   animation: card 500ms ease-in-out 300ms forwards;
 }
 
 @keyframes card {
   0% {
     opacity: 0;
-    transform: scale(0) skew(300deg);
+    transform: scale(0) skew(300deg) translateY(50%);
   }
   100% {
     opacity: 1;
-    transform: scale(1) skew(360deg);
+    transform: scale(1) skew(360deg) translateY(50%);
   }
 }
 
@@ -123,14 +119,6 @@ body::after {
 }
 
 .avatar-container {
-  display: -ms-flexbox; /* IE10 */
-  -ms-flex-pack: center;
-  -ms-flex-align: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   position: relative;
   width: 94px;
   height: 94px;
@@ -161,6 +149,10 @@ body::after {
 }
 
 .avatar {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
   position: relative;
   width: 86px;
   height: 86px;
@@ -223,23 +215,16 @@ body::after {
 }
 
 .stats-container > ul {
-  display: -ms-flexbox; /* IE10 */
-  -ms-flex-pack: center;
-  -ms-flex-align: center;
 
-  display: flex; /* IE11 */
-  justify-content: center;
-  align-items: center;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
 
   height: 100%;
   margin: auto 22px;
 }
 
 .stats-container > ul > li {
+  float: left;
+  width: 88px;
+
   list-style-type: none;
   text-align: center;
   padding: 20px;
