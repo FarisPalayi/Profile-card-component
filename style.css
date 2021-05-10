@@ -15,7 +15,7 @@ body {
   position: relative;
   margin: 0;
 
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   max-height: 100vh;
   min-height: fit-content;
@@ -23,12 +23,17 @@ body {
   font-size: 18px;
   font-family: Kumbh Sans, "Kumbh Sans", sans-serif;
   color: rgb(45, 50, 72);
+  background: none;
   background-color: rgb(25, 162, 174);
 
   overflow: hidden;
 }
 
 /* ===================== BACKGROUND IMAGES ======================== */
+main {
+  width: 100%;
+  height: 100%;
+}
 
 main:before,
 main:after {
@@ -36,6 +41,7 @@ main:after {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
+  display: block;
   z-index: -1;
 }
 
@@ -44,10 +50,9 @@ main:before {
   height: 135%;
   top: -70%;
   left: -20%;
-  
   background-image: url(./images/bg-pattern-top.svg);
   background-size: contain;
-  
+
   transform: scale(0.5);
   animation: bg1 700ms 300ms forwards;
 }
@@ -66,10 +71,9 @@ main:after {
   height: 140%;
   right: -178%;
   bottom: -91%;
-
   background-image: url(./images/bg-pattern-bottom.svg);
   background-size: contain;
-  
+
   transform: scale(0.8);
   animation: bg2 700ms 300ms forwards;
 }
@@ -83,17 +87,16 @@ main:after {
   }
 }
 
-@media (max-width:105em){
-  /* main{
-    background-color: hotpink;
+@media screen and (max-width:60em){
+  body{
+    background: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg), rgb(25, 162, 174);
+    background-repeat: no-repeat;
+    background-position: right 51vw bottom 35vh, left 51vw top 46vh;
   }
-  main:before{
-    background-size: 60% 90%;
-  }
+  main:before,
   main:after{
-    background-size: 100% 100%;
-    height: 50%;
-  } */
+    display: none;
+  }
 }
 
 /* ===================== CARD STYLES ======================== */
