@@ -1,6 +1,6 @@
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,22 +12,26 @@
 }
 
 body {
+  position: relative;
   margin: 0;
 
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  max-height: 100vh;
   min-height: fit-content;
 
   font-size: 18px;
-  font-family: Kumbh Sans, sans-serif;
+  font-family: Kumbh Sans, "Kumbh Sans", sans-serif;
   color: rgb(45, 50, 72);
   background-color: rgb(25, 162, 174);
 
   overflow: hidden;
 }
 
-body::before,
-body::after {
+/* ===================== BACKGROUND IMAGES ======================== */
+
+main:before,
+main:after {
   content: "";
   position: absolute;
   background-size: contain;
@@ -35,13 +39,15 @@ body::after {
   z-index: -1;
 }
 
-body::before {
+main:before {
   width: 120%;
   height: 135%;
   top: -70%;
   left: -20%;
+  
   background-image: url(./images/bg-pattern-top.svg);
-
+  background-size: contain;
+  
   transform: scale(0.5);
   animation: bg1 700ms 300ms forwards;
 }
@@ -55,14 +61,15 @@ body::before {
   }
 }
 
-body::after {
+main:after {
   width: 230%;
   height: 140%;
   right: -178%;
   bottom: -91%;
+
   background-image: url(./images/bg-pattern-bottom.svg);
   background-size: contain;
-
+  
   transform: scale(0.8);
   animation: bg2 700ms 300ms forwards;
 }
@@ -76,9 +83,27 @@ body::after {
   }
 }
 
+@media (max-width:105em){
+  /* main{
+    background-color: hotpink;
+  }
+  main:before{
+    background-size: 60% 90%;
+  }
+  main:after{
+    background-size: 100% 100%;
+    height: 50%;
+  } */
+}
+
+/* ===================== CARD STYLES ======================== */
+
 .card {
-  margin:0 auto;
+  position: absolute;
   top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  margin-top: -324px; /* -(166 + 158) */ /* 166 = half height of the card, 158 = card's translateY value*/
 
   width: 310px;
   height: 332px;
@@ -89,18 +114,18 @@ body::after {
 
   opacity: 0;
   transition: all 0.3s;
-  transform: scale(0) skew(300deg) translateY(50%);
+  transform: scale(0) skew(300deg) translate(-50%, 158px);
   animation: card 500ms ease-in-out 300ms forwards;
 }
 
 @keyframes card {
   0% {
     opacity: 0;
-    transform: scale(0) skew(300deg) translateY(50%);
+    transform: scale(0) skew(300deg) translate(-50%, 158px);
   }
   100% {
     opacity: 1;
-    transform: scale(1) skew(360deg) translateY(50%);
+    transform: scale(1) skew(360deg) translate(-50%, 158px);
   }
 }
 
@@ -112,11 +137,24 @@ body::after {
   position: relative;
   height: 76.5%;
 
-  background-image: linear-gradient(90deg, rgb(0, 138, 138), rgb(27, 183, 197));
   background-image: url(./images/bg-pattern-card.svg);
   background-size: 100% 49%;
   background-repeat: no-repeat;
 }
+
+.details-container:before {
+  /* when image isn't loaded */
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 48%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(90deg, rgb(0, 138, 138), rgb(27, 183, 197));
+  z-index: -1;
+}
+
+/* ===================== AVATAR(IMAGE) ======================== */
 
 .avatar-container {
   position: relative;
@@ -127,15 +165,17 @@ body::after {
   border-radius: 50%;
   transform: translate(-50%, -52%);
   background-color: rgb(255, 255, 255);
+  transition: all 0.15s;
   overflow: hidden;
 }
 
 .avatar-container:focus {
   outline: none;
-  background-color: rgb(65, 180, 190);
+  background-color: rgb(89, 202, 212);
 }
 
-.avatar-container::before {
+.avatar-container:before {
+  /* when image isn't loaded */
   content: "";
   position: absolute;
   width: 100%;
@@ -149,11 +189,11 @@ body::after {
 }
 
 .avatar {
+  position: relative;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 
-  position: relative;
   width: 86px;
   height: 86px;
   font-size: 0.6rem;
@@ -175,6 +215,8 @@ body::after {
   }
 }
 
+/* ===================== DETAILS(NAME AND ADDRESS) ======================== */
+
 .details {
   position: relative;
   width: 100%;
@@ -194,7 +236,7 @@ body::after {
   outline: none;
 }
 
-.name::after {
+.name:after {
   content: " 26";
   padding-top: 5px;
   padding-left: 4px;
@@ -209,14 +251,14 @@ body::after {
   color: rgb(150, 150, 150);
 }
 
+/* ===================== STATS(NUMBERS) ======================== */
+
 .stats-container {
   height: 23.5%;
   border-top: 0.4px solid rgb(228, 228, 228);
 }
 
 .stats-container > ul {
-
-
   height: 100%;
   margin: auto 22px;
 }
@@ -224,6 +266,10 @@ body::after {
 .stats-container > ul > li {
   float: left;
   width: 88px;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
   list-style-type: none;
   text-align: center;
@@ -235,7 +281,7 @@ body::after {
 .stats-container > ul > li:hover,
 .stats-container > ul > li:focus {
   filter: blur(0);
-  transform: scale(1.04);
+  transform: translateY(-50%) scale(1.04);
   color: rgb(25, 143, 154);
   outline: none;
 }
@@ -249,5 +295,5 @@ body::after {
   padding-top: 5px;
   font-size: 0.56rem;
   letter-spacing: 1.2px;
-  color: rgb(150, 150, 150);
+  color: rgb(147, 147, 147);
 }
