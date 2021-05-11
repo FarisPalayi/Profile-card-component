@@ -30,13 +30,9 @@ body {
 }
 
 /* ===================== BACKGROUND IMAGES ======================== */
-main {
-  width: 100%;
-  height: 100%;
-}
 
-main:before,
-main:after {
+body:before,
+body:after {
   content: "";
   position: absolute;
   background-size: contain;
@@ -45,7 +41,7 @@ main:after {
   z-index: -1;
 }
 
-main:before {
+body:before {
   width: 120%;
   height: 135%;
   top: -70%;
@@ -66,7 +62,7 @@ main:before {
   }
 }
 
-main:after {
+body:after {
   width: 230%;
   height: 140%;
   right: -178%;
@@ -93,8 +89,8 @@ main:after {
     background-repeat: no-repeat;
     background-position: right 51vw bottom 35vh, left 51vw top 46vh;
   }
-  main:before,
-  main:after{
+  body:before,
+  body:after{
     display: none;
   }
 }
@@ -145,8 +141,7 @@ main:after {
   background-repeat: no-repeat;
 }
 
-.details-container:before {
-  /* when image isn't loaded */
+.details-container:before { /* when image isn't loaded */
   content: "";
   position: absolute;
   width: 100%;
@@ -177,8 +172,7 @@ main:after {
   background-color: rgb(89, 202, 212);
 }
 
-.avatar-container:before {
-  /* when image isn't loaded */
+.avatar-container:before { /* when image isn't loaded */
   content: "";
   position: absolute;
   width: 100%;
@@ -206,7 +200,7 @@ main:after {
   aspect-ratio: 1/1;
 
   opacity: 0;
-  animation: avatar 300ms 900ms forwards;
+  animation: avatar 400ms 1000ms forwards;
 }
 
 @keyframes avatar {
@@ -228,6 +222,7 @@ main:after {
 }
 
 .name {
+  display: inline-block;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -239,8 +234,13 @@ main:after {
   outline: none;
 }
 
-.name:after {
-  content: " 26";
+.name-and-age-container{
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.age {
+  display: inline-block;
   padding-top: 5px;
   padding-left: 4px;
   font-size: 0.95rem;
@@ -290,13 +290,14 @@ main:after {
 }
 
 .stat-number {
+  display: block;
   font-size: 1.05rem;
   font-weight: 700;
 }
 
 .stat-name {
-  padding-top: 5px;
-  font-size: 0.56rem;
+  padding-top: 12px;
+  font-size: 0.63rem;
   letter-spacing: 1.2px;
   color: rgb(147, 147, 147);
 }
