@@ -10,6 +10,7 @@
   <link rel="preload" href="./images/bg-pattern-top.svg" as="image">
   <link rel="preload" href="./images/bg-pattern-bottom.svg" as="image">
   <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
   <title>Frontend Mentor | Profile card component</title>
 </head>
 <body>
@@ -18,17 +19,21 @@
       <div class="details-container">
         <div class="avatar-container"> <img class="avatar" src="./images/image-victor.jpg" alt="victor's avatar"> </div>
         <div class="details"> 
-          <div class="name-and-age-container"> <h1 class="name" title="About Victor Crest">Victor Crest</h1> <p class="age">26</p> </div>
-          <p class="place">London</p> </div>
+          <div class="name-and-age-container"> <h1 class="name editable" title="About Victor Crest">Victor Crest</h1> <p class="age editable">26</p> </div>
+          <p class="place editable">London</p> </div>
       </div>
       <div class="stats-container">
         <ul>
-          <li><span class="stat-number">80K</span><span class="stat-name">Followers</span></li>
-          <li><span class="stat-number">803K</span><span class="stat-name">Likes</span></li>
-          <li><span class="stat-number">1.4K</span><span class="stat-name">Photos</span></li>
+          <li> <span class="stat-number editable followers-count">80K</span> <span class="stat-name">Followers</span> </li>
+          <li> <span class="stat-number editable likes-count">803K</span>    <span class="stat-name">Likes</span>     </li>
+          <li> <span class="stat-number editable photos-count">1.4K</span>   <span class="stat-name">Photos</span>    </li>
         </ul>
       </div>
     </article>
+
+    <button class="edit-btn">Edit</button>
+    <button class="save-btn">Save</button>
+    <button class="cancel-btn">Cancel</button>
 
 </body>
 </html>

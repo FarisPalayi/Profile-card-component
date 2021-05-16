@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline-color: rgb(65, 180, 190);
 }
 
 ::selection {
@@ -231,7 +232,6 @@ body:after {
 .name:hover,
 .name:focus {
   color: rgb(25, 143, 154);
-  outline: none;
 }
 
 .name-and-age-container{
@@ -286,7 +286,6 @@ body:after {
   filter: blur(0);
   transform: translateY(-50%) scale(1.04);
   color: rgb(25, 143, 154);
-  outline: none;
 }
 
 .stat-number {
@@ -300,4 +299,12 @@ body:after {
   font-size: 0.63rem;
   letter-spacing: 1.2px;
   color: rgb(147, 147, 147);
+}
+
+/* =====================  EDIT BUTTONS ======================== */
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  visibility: hidden;
 }
