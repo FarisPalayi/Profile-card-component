@@ -1,28 +1,17 @@
+const body = document.body;
+
 const name = document.getElementsByClassName('name')[0];
 const place = document.getElementsByClassName('place')[0];
 const age = document.getElementsByClassName('age')[0];
 const followers = document.getElementsByClassName('followers-count')[0];
 const likes = document.getElementsByClassName('likes-count')[0];
 const photos = document.getElementsByClassName('photos-count')[0];
+
 const editableElements = document.getElementsByClassName('editable');
 
 const editBtn = document.getElementsByClassName('edit-btn')[0];
 const saveBtn = document.getElementsByClassName('save-btn')[0];
 const cancelBtn = document.getElementsByClassName('cancel-btn')[0];
-
-let fallbackDataObj = {
-    name : "Victor Crest",
-    place : "London",
-    age : 26,
-    stats : {
-        followers : "80K",
-        likes : "803K",
-        photos : "1.4K"
-    }
-}
-
-const fallbackDataString = JSON.stringify(fallbackDataObj);
-localStorage.setItem('userData',fallbackDataString)
 
 function showText(dataObj){
     name.innerText = dataObj.name;
@@ -51,13 +40,13 @@ function isUserInputValid() {
 function saveData() {
     if(isUserInputValid()) {
         let data = {
-            name : name.innerText,
-            place : place.innerText,
-            age : age.innerText,
+            name : name.innerText.trim(),
+            place : place.innerText.trim(),
+            age : age.innerText.trim(),
             stats : {
-                followers : followers.innerText,
-                likes : likes.innerText,
-                photos : photos.innerText
+                followers : followers.innerText.trim(),
+                likes : likes.innerText.trim(),
+                photos : photos.innerText.trim()
             }
         }
 
@@ -67,6 +56,8 @@ function saveData() {
         [...editableElements].forEach((element) => {
             element.setAttribute('contenteditable','false');
         })
+
+        hide();
 
     } else {
         alert("invalid input")
@@ -88,12 +79,25 @@ function loadData() {
 loadData()
 
 function cancel() {
+    let fallbackDataObj = {
+        name : "Victor Crest",
+        place : "London",
+        age : 26,
+        stats : {
+            followers : "80K",
+            likes : "803K",
+            photos : "1.4K"
+        }
+    };
 
     [...editableElements].forEach((element) => {
         element.setAttribute('contenteditable','false');
     })
 
-    loadData();
+    // calling and using as a condition
+    if(!loadData()) {
+        showText(fallbackDataObj)
+    };
 }
 
 cancelBtn.addEventListener('click', cancel)

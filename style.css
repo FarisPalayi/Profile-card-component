@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
   outline-color: rgb(65, 180, 190);
+  white-space: nowrap;
+}
+
+*:not(.place){
+  outline-offset: 5px;
 }
 
 ::selection {
@@ -197,7 +202,6 @@ body:after {
   font-size: 0.6rem;
   border-radius: 50%;
   background-image: linear-gradient(90deg, rgb(0, 139, 139), rgb(27, 183, 197));
-  cursor: pointer;
   aspect-ratio: 1/1;
 
   opacity: 0;
@@ -226,11 +230,9 @@ body:after {
   display: inline-block;
   font-size: 1rem;
   font-weight: 700;
-  cursor: pointer;
 }
 
-.name:hover,
-.name:focus {
+.name:hover {
   color: rgb(25, 143, 154);
 }
 
@@ -278,7 +280,6 @@ body:after {
   text-align: center;
   padding: 20px;
   transition: transform 0.1s ease-in;
-  cursor: pointer;
 }
 
 .stats-container > ul > li:hover,
@@ -313,7 +314,7 @@ body:after {
   height: 45px;
   top: 10px;
   left: 10px;
-  font-size: .8rem;
+  font-size: .75rem;
   color: hsl(185, 75%, 14%);
   background-color: rgb(25, 162, 174);
   border: 1.7px solid hsl(185, 75%, 29%);
@@ -326,22 +327,40 @@ body:after {
   z-index: 3;
 }
 
-.edit-btn:hover,
-.save-btn:hover,
-.cancel-btn:hover{
+.edit-btn:hover {
   background-color: hsl(185, 75%, 42%);
 }
 
-.edit-btn:active,
-.save-btn:active,
-.cancel-btn:active{
+.edit-btn:active {
   background-color: hsl(185, 75%, 35%);
 }
 
 .save-btn {
+  color: hsl(135, 75%, 79%);
+  background-color: hsl(135, 75%, 39%, .9);
+  border: 1.7px solid hsl(135, 75%, 59%);
   z-index: 2;
 }
 
+.save-btn:hover {
+  background-color: hsl(135, 75%, 42%);
+}
+
+.save-btn:active {
+  background-color: hsl(17, 75%, 35%);
+}
+
 .cancel-btn {
+  color: hsl(0, 75%, 86%);
+  background-color: hsl(0, 75%, 61%);
+  border: 1.7px solid hsl(0, 75%, 76%);
   z-index: 1;
+}
+
+.cancel-btn:hover {
+  background-color: hsl(0, 75%, 64%);
+}
+
+.cancel-btn:active {
+  background-color: hsl(17, 65%, 35%);
 }
