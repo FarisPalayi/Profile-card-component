@@ -14,6 +14,8 @@ function show() {
   editBtn.style.visibility = "hidden";
 
   body.style.backgroundColor = "deeppink";
+  body.style.transition = "background-color 1s";
+
   name.focus();
 }
 

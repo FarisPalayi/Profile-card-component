@@ -8,7 +8,7 @@
   white-space: nowrap;
 }
 
-*:not(.place){
+*:not(.place) {
   outline-offset: 5px;
 }
 
@@ -205,10 +205,10 @@ body:after {
   aspect-ratio: 1/1;
 
   opacity: 0;
-  animation: avatar 400ms 1000ms forwards;
+  animation: opacity 700ms 1000ms forwards;
 }
 
-@keyframes avatar {
+@keyframes opacity {
   from {
     opacity: 0;
   }
@@ -347,7 +347,7 @@ body:after {
 }
 
 .save-btn:active {
-  background-color: hsl(17, 75%, 35%);
+  background-color: hsl(135, 75%, 15%);
 }
 
 .cancel-btn {
