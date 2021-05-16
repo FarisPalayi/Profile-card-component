@@ -108,7 +108,7 @@ body:after {
   width: 310px;
   height: 332px;
   background-color: rgb(255, 255, 255);
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.06), 0 50px 60px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 
@@ -307,4 +307,41 @@ body:after {
 .save-btn,
 .cancel-btn {
   visibility: hidden;
+
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 10px;
+  left: 10px;
+  font-size: .8rem;
+  color: hsl(185, 75%, 14%);
+  background-color: rgb(25, 162, 174);
+  border: 1.7px solid hsl(185, 75%, 29%);
+  border-radius: 50%;
+  transition: transform 350ms, background-color 200ms;
+}
+
+.edit-btn {
+  left: 10px;
+  z-index: 3;
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover{
+  background-color: hsl(185, 75%, 42%);
+}
+
+.edit-btn:active,
+.save-btn:active,
+.cancel-btn:active{
+  background-color: hsl(185, 75%, 35%);
+}
+
+.save-btn {
+  z-index: 2;
+}
+
+.cancel-btn {
+  z-index: 1;
 }

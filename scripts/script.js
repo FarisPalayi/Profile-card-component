@@ -10,10 +10,6 @@ const editBtn = document.getElementsByClassName('edit-btn')[0];
 const saveBtn = document.getElementsByClassName('save-btn')[0];
 const cancelBtn = document.getElementsByClassName('cancel-btn')[0];
 
-editBtn.style.visibility = 'visible';
-saveBtn.style.visibility = 'hidden';
-cancelBtn.style.visibility = 'hidden';
-
 let fallbackDataObj = {
     name : "Victor Crest",
     place : "London",
@@ -41,9 +37,6 @@ function edit() {
     [...editableElements].forEach((element) => {
         element.setAttribute('contenteditable','true');
     })
-
-    saveBtn.style.visibility = 'visible';
-    cancelBtn.style.visibility = 'visible';
 }
 
 editBtn.addEventListener('click', edit);
@@ -75,9 +68,6 @@ function saveData() {
             element.setAttribute('contenteditable','false');
         })
 
-        saveBtn.style.visibility = 'hidden';
-        cancelBtn.style.visibility = 'hidden';
-
     } else {
         alert("invalid input")
     }
@@ -98,9 +88,7 @@ function loadData() {
 loadData()
 
 function cancel() {
-    cancelBtn.style.visibility = 'hidden';
-    saveBtn.style.visibility = 'hidden';
-    
+
     [...editableElements].forEach((element) => {
         element.setAttribute('contenteditable','false');
     })
