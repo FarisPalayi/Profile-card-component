@@ -4,16 +4,16 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
 
 ## Overview
@@ -27,7 +27,7 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 
 ### Screenshot
 
-![](./images/screenshot.png)
+![screenshot of the solution](./images/screenshot.png)
 
 ### Links
 
@@ -42,8 +42,8 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 - CSS
 
 ### What I learned
-I learned that:
-- Using `tabindex` attribute make elements focusable and defines an order to the focus.
+I learned :
+- How to use `tabindex` attribute make elements focusable and defines an order to the focus.
 ```html
 <h1 tabindex='1'>Some HTML code</h1>
 <p tabindex='2'>Some HTML code </p>
@@ -68,7 +68,7 @@ I learned that:
 
 ### Continued development
 
-My next goal is to learn BEM
+- My next goal is to learn BEM
 
 ### Useful resources
 

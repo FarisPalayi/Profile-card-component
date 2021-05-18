@@ -226,8 +226,14 @@ body:after {
   text-align: center;
 }
 
+.name-and-age-container{
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .name {
   display: inline-block;
+  min-width: 10ch;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -236,22 +242,19 @@ body:after {
   color: rgb(25, 143, 154);
 }
 
-.name-and-age-container{
-  display: inline-block;
-  white-space: nowrap;
-}
-
 .age {
   display: inline-block;
+  min-width: 2ch;
+  margin-left: 4px;
   padding-top: 5px;
-  padding-left: 4px;
   font-size: 0.95rem;
   font-weight: 400;
   color: rgb(106, 111, 129);
 }
 
 .place {
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
   font-size: 0.78rem;
   color: rgb(150, 150, 150);
 }

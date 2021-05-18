@@ -13,13 +13,14 @@ const body = document.body,
       saveBtn   = document.querySelector('.save-btn'),
       cancelBtn = document.querySelector('.cancel-btn');
 
+      
 function showText(dataObj){
-    name.innerText = dataObj.name;
-    place.innerText = dataObj.place;
-    age.innerText = dataObj.age;
+    name.innerText      = dataObj.name;
+    place.innerText     = dataObj.place;
+    age.innerText       = dataObj.age;
     followers.innerText = dataObj.stats.followers;
-    likes.innerText = dataObj.stats.likes;
-    photos.innerText = dataObj.stats.photos;
+    likes.innerText     = dataObj.stats.likes;
+    photos.innerText    = dataObj.stats.photos;
 }
 
 let edit = () => editableElements.forEach((element) => element.setAttribute('contenteditable','true'));
@@ -28,12 +29,12 @@ editBtn.addEventListener('click', edit);
 
 function isUserInputValid() {
     if(
-        name.innerText.trim() === '' || 
-        place.innerText.trim() === '' || 
-        age.innerText.trim() === '' || 
+        name.innerText.trim()      === '' || 
+        place.innerText.trim()     === '' || 
+        age.innerText.trim()       === '' || 
         followers.innerText.trim() === '' || 
-        likes.innerText.trim() === '' || 
-        photos.innerText === ''
+        likes.innerText.trim()     === '' || 
+        photos.innerText           === ''
     )
       return false;
     else
@@ -43,57 +44,57 @@ function isUserInputValid() {
 function saveData() {
     if(isUserInputValid()) {
         let data = {
-            name : name.innerText.trim(),
+            name  : name.innerText.trim(),
             place : place.innerText.trim(),
-            age : age.innerText.trim(),
+            age   : age.innerText.trim(),
             stats : {
                 followers : followers.innerText.trim(),
-                likes : likes.innerText.trim(),
-                photos : photos.innerText.trim()
+                likes     : likes.innerText.trim(),
+                photos    : photos.innerText.trim()
             }
         }
 
         let dataObjString = JSON.stringify(data);
-        localStorage.setItem("userData",dataObjString);
+        localStorage.setItem('userData',dataObjString);
 
         editableElements.forEach((element) => element.setAttribute('contenteditable','false'));
 
         hide();
 
     } else {
-        alert("invalid input")
+        alert('invalid input')
     }
 }
 
 saveBtn.addEventListener('click',saveData);
 
 function loadData() {
-    let localStorageData = localStorage.getItem("userData");
+    let localStorageData = localStorage.getItem('userData');
+    
     if(localStorageData){
         showText(JSON.parse(localStorageData));
-        return true
-    } else {
         return false;
+    } else {
+        return true;
     }
 }
 loadData()
 
 function cancel() {
     let fallbackDataObj = {
-        name : "Victor Crest",
-        place : "London",
-        age : 26,
+        name  : 'Victor Crest',
+        place : 'London',
+        age   : 26,
         stats : {
-            followers : "80K",
-            likes : "803K",
-            photos : "1.4K"
+            followers : '80K',
+            likes     : '803K',
+            photos    : '1.4K'
         }
     };
 
     editableElements.forEach((element) => element.setAttribute('contenteditable','false'));
-
     // calling and using as a condition
-    if(!loadData()) showText(fallbackDataObj);
+    if(loadData()) showText(fallbackDataObj);
 }
 
 cancelBtn.addEventListener('click', cancel);
