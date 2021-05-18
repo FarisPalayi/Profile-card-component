@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "./typescript",
+    "rootDir": "./",
     "outDir": "./scripts"
   }
 }
